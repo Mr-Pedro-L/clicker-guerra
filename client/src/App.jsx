@@ -78,9 +78,9 @@ export default function App(){
       const ts = 128; const off = document.createElement('canvas'); off.width = off.height = ts; const g = off.getContext('2d');
       // base
       g.fillStyle = '#1d4020'; g.fillRect(0,0,ts,ts);
-      // variações (manchas)
+      // variações (manchas) (40)
       for(let i=0;i<90;i++){ const r= Math.random()*10+6; const x=Math.random()*ts, y=Math.random()*ts; g.fillStyle = `rgba(40,90,42,${Math.random()*0.15+0.05})`; g.beginPath(); g.arc(x,y,r,0,Math.PI*2); g.fill(); }
-      // "fios" de grama
+      // "fios" de grama (25)
       g.strokeStyle = 'rgba(120,180,110,0.25)'; g.lineWidth = 1;
       for(let i=0;i<60;i++){ const x=Math.random()*ts, y=Math.random()*ts; const len=3+Math.random()*6; const ang=Math.random()*Math.PI*2; g.beginPath(); g.moveTo(x,y); g.lineTo(x+Math.cos(ang)*len, y+Math.sin(ang)*len); g.stroke(); }
       grassTileRef.current = off;
